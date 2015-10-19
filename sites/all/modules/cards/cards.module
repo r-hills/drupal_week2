@@ -1,0 +1,25 @@
+<?php
+
+
+function cards_menu() {
+  $items = array();
+  $friends = array("Bob","John","Tom");
+  $count = count($friends);
+
+  for($i = 0; $i < $count ; $i++) {
+    $items["cards/" . $friends[$i]] = array(
+      'title' => "Hi ".$friends[$i],
+      'page callback' => 'show_card',
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+      'page arguments' => array($friends[$i]),
+    );
+   }
+  return $items;
+}
+
+function show_card($friend) {
+  return "
+    <h1> This is a special card for my friend " . $friend . "</h1>
+  ";
+}

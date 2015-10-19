@@ -1,0 +1,24 @@
+<?php
+function pet_menu() {
+  $items = array();
+  $items['display_pet'] = array(
+    'title' => 'My favorite pet',
+    'page callback' => 'show_pet',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function show_pet() {
+  return "
+        <h1>My Dog</h1>
+        <ul>
+          <li>Name: Henry</li>
+          <li><img src='https://www.cesarsway.com/sites/newcesarsway/files/d6/images/features/2012/JUNE/The-History-of-Beagles.jpg'>
+          </li>
+          <li><a href='http://www.akc.org/dog-breeds/beagle/'>Test link</a></li>
+        </ul>
+
+  ";
+}
